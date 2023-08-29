@@ -2,4 +2,6 @@ url: https://dahhamalsoud.github.io/phdcocktail/
 template:
   bootstrap: 5
   bootswatch: united
+development:
+  mode: auto
 
