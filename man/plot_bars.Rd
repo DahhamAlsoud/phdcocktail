@@ -43,7 +43,7 @@ suffixed with '\%' label.}
 \item{grouping}{Faceting variable.}
 }
 \value{
-A bar plot of clinical outcome.
+A bar plot of outcome percentages.
 }
 \description{
 Plot \% of outcomes as bars

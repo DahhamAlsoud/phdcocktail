@@ -6,7 +6,7 @@
 \alias{ibd_data2}
 \title{Inflammatory Bowel Disease (IBD) datasets}
 \format{
-\code{ibd_data1}: a data frame with 30 rows and six columns:
+Two data frames with each 30 rows and six columns:
 \describe{
 \item{patientid}{Patient ID}
 \item{gender}{Gender}

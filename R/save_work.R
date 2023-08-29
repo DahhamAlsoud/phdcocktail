@@ -1,4 +1,4 @@
-#' Save global objects to the output folder
+#' Save global objects to the 'output' folder
 #'
 #' @param folder The folder to which the workspace or some of its
 #' objects need to be saved. The default is an 'Rdata' folder within
@@ -17,7 +17,9 @@
 #' accompanying 'txt' document.
 #'
 #' @examples
+#' \dontrun{
 #' try(save_work())
+#' }
 #'
 #' @export
 save_work <- function(folder = "output/Rdata", name = "analysis", objects_to_save = NULL,

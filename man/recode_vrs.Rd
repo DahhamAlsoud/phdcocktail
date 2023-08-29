@@ -13,7 +13,7 @@ recode_vrs(data, data_dictionary, vrs, factor = FALSE)
 
 \item{vrs}{A character vector specifying the variables to be recoded.}
 
-\item{factor}{A logical to indicate whether recoded variables need to be converted to factors.}
+\item{factor}{A logical to indicate whether recoded variables need to be converted into factors.}
 }
 \value{
 The input data frame with recoded and labelled variables.

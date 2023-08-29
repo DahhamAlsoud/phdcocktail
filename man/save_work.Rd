@@ -2,7 +2,7 @@
 % Please edit documentation in R/save_work.R
 \name{save_work}
 \alias{save_work}
-\title{Save global objects to the output folder}
+\title{Save global objects to the 'output' folder}
 \usage{
 save_work(
   folder = "output/Rdata",
@@ -33,9 +33,11 @@ within this file, and this list will also be documented in an
 accompanying 'txt' document.
 }
 \description{
-Save global objects to the output folder
+Save global objects to the 'output' folder
 }
 \examples{
+\dontrun{
 try(save_work())
+}
 
 }

@@ -10,12 +10,14 @@
 #' with identical names should be overwritten. Default is 'FALSE'.
 #' @param time_in_name A logical to indicate whether a timestamp
 #' should be included in the file's name.
-#' @param ... Other argument that can be passed into 'rio::export'
+#' @param ... Other argument that can be passed to 'rio::export'
 #'
 #' @return A message indicating the full path of the exported file.
 #'
 #' @examples
+#' \dontrun{
 #' try(export_safely(mtcars))
+#' }
 #'
 #' @export
 export_safely <- function(data, folder = "output/data", name = NULL, format = "xlsx", overwrite = FALSE, time_in_name = FALSE, ...) {

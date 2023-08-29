@@ -31,7 +31,7 @@ with identical names should be overwritten. Default is 'FALSE'.}
 \item{time_in_name}{A logical to indicate whether a timestamp
 should be included in the file's name.}
 
-\item{...}{Other argument that can be passed into 'rio::export'}
+\item{...}{Other argument that can be passed to 'rio::export'}
 }
 \value{
 A message indicating the full path of the exported file.
@@ -40,6 +40,8 @@ A message indicating the full path of the exported file.
 Export files to the 'output' folder
 }
 \examples{
+\dontrun{
 try(export_safely(mtcars))
+}
 
 }

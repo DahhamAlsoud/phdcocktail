@@ -5,7 +5,7 @@
 \alias{ibd_outcomes}
 \title{Inflammatory Bowel Disease (IBD) outcomes}
 \format{
-\code{ibd_outcomes}: a data frame with eight rows and seven columns:
+A data frame with eight rows and seven columns:
 \describe{
 \item{outcome}{Outcome type}
 \item{timepoint}{Assessment timepoint}

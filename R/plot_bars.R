@@ -13,7 +13,7 @@
 #' @param bar_fill Fill color of the bars.
 #' @param grouping Faceting variable.
 #'
-#' @return A bar plot of clinical outcome.
+#' @return A bar plot of outcome percentages.
 #'
 #' @examples
 #' try(plot_bars())

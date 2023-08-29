@@ -16,7 +16,7 @@ report_quantiles(data, summary_vrs, grouping_vrs = NULL)
 \value{
 A dataframe of the class 'quantiles_report', containing a
 'report' column, which report the 'median (quartile 1-quartile 3)'
-combination for each specified numeric variable, at each grouping
+combinations for each specified numeric variable, at each grouping
 key.
 }
 \description{

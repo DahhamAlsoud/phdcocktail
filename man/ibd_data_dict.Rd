@@ -5,7 +5,7 @@
 \alias{ibd_data_dict}
 \title{Data dictionary for Inflammatory Bowel Disease (IBD) data}
 \format{
-\code{ibd_data_dict}: a data frame with 53 rows and four columns:
+A data frame with 53 rows and four columns:
 \describe{
 \item{variable}{Variable name in the 'collection', i.e. 'excel', form}
 \item{variable_label}{Variable name in the publication form}

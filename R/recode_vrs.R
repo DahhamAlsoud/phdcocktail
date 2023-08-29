@@ -3,7 +3,7 @@
 #' @param data A data frame with raw data.
 #' @param data_dictionary A data dictionary containing labels for the variables and their levels.
 #' @param vrs A character vector specifying the variables to be recoded.
-#' @param factor A logical to indicate whether recoded variables need to be converted to factors.
+#' @param factor A logical to indicate whether recoded variables need to be converted into factors.
 #'
 #' @return The input data frame with recoded and labelled variables.
 #'

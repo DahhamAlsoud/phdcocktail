@@ -3,7 +3,7 @@
 #' A small, non-exhaustive list of variables that are commonly collected in IBD research. For each
 #' variable and its levels, if applicable, publications-ready labels are provided
 #'
-#' @format `ibd_data_dict`: a data frame with 53 rows and four columns:
+#' @format A data frame with 53 rows and four columns:
 #' \describe{
 #'   \item{variable}{Variable name in the 'collection', i.e. 'excel', form}
 #'   \item{variable_label}{Variable name in the publication form}
@@ -19,7 +19,7 @@
 #' more specifically patients with Crohn's disease. 'ibd_data2' is a modified version of 'ibd_data1'
 #' by introducing missing and incorrect entries 'L11' into the column 'disease_location'.
 #'
-#' @format `ibd_data1`: a data frame with 30 rows and six columns:
+#' @format Two data frames with each 30 rows and six columns:
 #' \describe{
 #'   \item{patientid}{Patient ID}
 #'   \item{gender}{Gender}
@@ -39,7 +39,7 @@
 #'
 #' A table containing proportions and percentages of IBD patients achieving clinical outcomes.
 #'
-#' @format `ibd_outcomes`: a data frame with eight rows and seven columns:
+#' @format A data frame with eight rows and seven columns:
 #' \describe{
 #'   \item{outcome}{Outcome type}
 #'   \item{timepoint}{Assessment timepoint}

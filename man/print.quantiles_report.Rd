@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{A data frame of the class 'quantiles_report'.}
 
-\item{...}{Other argument that can be passed into 'print'.}
+\item{...}{Other argument that can be passed to 'print'.}
 }
 \value{
 The function displays the content of the column 'report'
