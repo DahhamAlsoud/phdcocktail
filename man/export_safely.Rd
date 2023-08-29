@@ -41,7 +41,7 @@ Export files to the 'output' folder
 }
 \examples{
 \dontrun{
-try(export_safely(mtcars))
+export_safely(mtcars)
 }
 
 }

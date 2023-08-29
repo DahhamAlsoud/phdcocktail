@@ -7,8 +7,10 @@
 #' in separate lines.
 #'
 #' @examples
-#' try(summary_data <- report_quantiles(mtcars, summary_vrs = "mpg"))
-#' try(print(summary_data))
+#' \dontrun{
+#' summary_data <- report_quantiles(mtcars, summary_vrs = "mpg")
+#' print(summary_data)
+#' }
 #'
 #' @export
 print.quantiles_report <- function(x, ...) {

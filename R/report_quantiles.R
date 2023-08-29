@@ -10,7 +10,9 @@
 #' key.
 #'
 #' @examples
+#' \dontrun{
 #' summary_data <- report_quantiles(mtcars, summary_vrs = "mpg")
+#' }
 #'
 #' @export
 report_quantiles <- function(data, summary_vrs, grouping_vrs = NULL) {

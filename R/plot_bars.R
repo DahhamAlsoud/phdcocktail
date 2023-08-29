@@ -16,7 +16,9 @@
 #' @return A bar plot of outcome percentages.
 #'
 #' @examples
-#' try(plot_bars())
+#' \dontrun{
+#' plot_bars()
+#' }
 #'
 #' @export
 plot_bars <- function(data, outcome, proportion, percentage_labelled, achieved, total,

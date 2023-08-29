@@ -5,7 +5,9 @@
 #' @return A message indicating which workspace has been loaded.
 #'
 #' @examples
-#' try(load_recent_work())
+#' \dontrun{
+#' load_recent_work()
+#' }
 #'
 #' @export
 load_recent_work <- function(folder = "output") {

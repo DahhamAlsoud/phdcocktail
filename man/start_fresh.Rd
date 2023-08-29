@@ -13,6 +13,8 @@ A clean R session
 Restart R session
 }
 \examples{
-try(start_fresh())
+\dontrun{
+start_fresh()
+}
 
 }

@@ -23,6 +23,8 @@ key.
 Report median-quantiles summaries
 }
 \examples{
+\dontrun{
 summary_data <- report_quantiles(mtcars, summary_vrs = "mpg")
+}
 
 }

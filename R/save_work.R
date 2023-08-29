@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' try(save_work())
+#' save_work()
 #' }
 #'
 #' @export

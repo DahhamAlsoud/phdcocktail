@@ -16,6 +16,8 @@ A message indicating which workspace has been loaded.
 Load most recent saved R workspace
 }
 \examples{
-try(load_recent_work())
+\dontrun{
+load_recent_work()
+}
 
 }

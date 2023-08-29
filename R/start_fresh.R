@@ -3,7 +3,9 @@
 #' @return A clean R session
 #'
 #' @examples
-#' try(start_fresh())
+#' \dontrun{
+#' start_fresh()
+#' }
 #'
 #' @export
 start_fresh <- function() {

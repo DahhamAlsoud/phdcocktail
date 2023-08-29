@@ -49,6 +49,8 @@ A bar plot of outcome percentages.
 Plot \% of outcomes as bars
 }
 \examples{
-try(plot_bars())
+\dontrun{
+plot_bars()
+}
 
 }

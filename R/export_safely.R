@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' try(export_safely(mtcars))
+#' export_safely(mtcars)
 #' }
 #'
 #' @export

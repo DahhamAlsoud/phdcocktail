@@ -26,6 +26,8 @@ A message listing the files that have been deleted.
 Delete files from the 'output' folder
 }
 \examples{
-try(delete_output())
+\dontrun{
+delete_output()
+}
 
 }

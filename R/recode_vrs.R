@@ -8,8 +8,10 @@
 #' @return The input data frame with recoded and labelled variables.
 #'
 #' @examples
-#' try(ibd_data_recoded <- recode_vrs(data = ibd_data, data_dictionary = ibd_data_dict,
-#'vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE))
+#' \dontrun{
+#' ibd_data_recoded <- recode_vrs(data = ibd_data, data_dictionary = ibd_data_dict,
+#'vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
+#'}
 #'
 #' @export
 recode_vrs <- function(data, data_dictionary, vrs, factor = FALSE) {

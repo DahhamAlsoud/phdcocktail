@@ -37,7 +37,7 @@ Save global objects to the 'output' folder
 }
 \examples{
 \dontrun{
-try(save_work())
+save_work()
 }
 
 }

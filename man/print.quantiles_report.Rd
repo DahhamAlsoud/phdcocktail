@@ -19,7 +19,9 @@ in separate lines.
 A custom print method for the 'quantiles_report' class
 }
 \examples{
-try(summary_data <- report_quantiles(mtcars, summary_vrs = "mpg"))
-try(print(summary_data))
+\dontrun{
+summary_data <- report_quantiles(mtcars, summary_vrs = "mpg")
+print(summary_data)
+}
 
 }

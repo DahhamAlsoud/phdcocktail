@@ -13,7 +13,9 @@
 #' @return A message listing the files that have been deleted.
 #'
 #' @examples
-#' try(delete_output())
+#' \dontrun{
+#' delete_output()
+#' }
 #'
 #' @export
 delete_output <- function(folder = "output", which = NULL, extensions = c("xlsx", "xls")) {
