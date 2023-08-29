@@ -1,17 +1,23 @@
-#' Export files to the output folder
+#' Export files to the 'output' folder
 #'
-#' @param data
-#' @param name
-#' @param folder
-#' @param format
-#' @param overwrite
-#' @param time_in_name
-#' @param ...
+#' @param data The object to be exported.
+#' @param folder The folder to which the object need to be exported.
+#' The default is a 'data' folder within the 'output' folder.
+#' @param name The name of the exported file. If no name is provided,
+#' the file will inherit the object's name.
+#' @param format The format of the exported file. Default is 'xlsx'.
+#' @param overwrite A logical to indicate whether preexisting files
+#' with identical names should be overwritten. Default is 'FALSE'.
+#' @param time_in_name A logical to indicate whether a timestamp
+#' should be included in the file's name.
+#' @param ... Other argument that can be passed into 'rio::export'
 #'
-#' @return
-#' @export
+#' @return A message indicating the full path of the exported file.
 #'
 #' @examples
+#' try(export_safely(mtcars))
+#'
+#' @export
 export_safely <- function(data, folder = "output/data", name = NULL, format = "xlsx", overwrite = FALSE, time_in_name = FALSE, ...) {
   # Create the output folder if it does not exist yet
   folder <- here::here(folder)

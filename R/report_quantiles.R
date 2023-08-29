@@ -1,13 +1,18 @@
 #' Report median-quantiles summaries
 #'
-#' @param data
-#' @param summary_vrs
-#' @param grouping_vrs
+#' @param data A data frame including numeric variables to be summarized.
+#' @param summary_vrs A character vector specifying the numeric variables to be summarized.
+#' @param grouping_vrs A character vector specifying the grouping variables, if any.
 #'
-#' @return
-#' @export
+#' @return A dataframe of the class 'quantiles_report', containing a
+#' 'report' column, which report the 'median (quartile 1-quartile 3)'
+#' combination for each specified numeric variable, at each grouping
+#' key.
 #'
 #' @examples
+#' summary_data <- report_quantiles(mtcars, summary_vrs = "mpg")
+#'
+#' @export
 report_quantiles <- function(data, summary_vrs, grouping_vrs = NULL) {
   simple_quantiles <- function(data, summary_vrs) {
     # Check if the specified summary columns exist
@@ -31,9 +36,9 @@ report_quantiles <- function(data, summary_vrs, grouping_vrs = NULL) {
     # Compute the median, IQR, Q1, and Q3 for each numeric existing summary column
     summary_data <- data.frame(
       summary_variable = existing_sum_vrs,
-      median = round(apply(working_df, 2, median, na.rm = TRUE), 1),
-      q1 = round(apply(working_df, 2, quantile, probs = 0.25, na.rm = TRUE), 1),
-      q3 = round(apply(working_df, 2, quantile, probs = 0.75, na.rm = TRUE), 1),
+      median = round(apply(working_df, 2, stats::median, na.rm = TRUE), 1),
+      q1 = round(apply(working_df, 2, stats::quantile, probs = 0.25, na.rm = TRUE), 1),
+      q3 = round(apply(working_df, 2, stats::quantile, probs = 0.75, na.rm = TRUE), 1),
       row.names = NULL
     )
 

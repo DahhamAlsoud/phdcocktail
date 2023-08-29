@@ -2,7 +2,7 @@
 % Please edit documentation in R/export_safely.R
 \name{export_safely}
 \alias{export_safely}
-\title{Export files to the output folder}
+\title{Export files to the 'output' folder}
 \usage{
 export_safely(
   data,
@@ -15,8 +15,31 @@ export_safely(
 )
 }
 \arguments{
-\item{...}{}
+\item{data}{The object to be exported.}
+
+\item{folder}{The folder to which the object need to be exported.
+The default is a 'data' folder within the 'output' folder.}
+
+\item{name}{The name of the exported file. If no name is provided,
+the file will inherit the object's name.}
+
+\item{format}{The format of the exported file. Default is 'xlsx'.}
+
+\item{overwrite}{A logical to indicate whether preexisting files
+with identical names should be overwritten. Default is 'FALSE'.}
+
+\item{time_in_name}{A logical to indicate whether a timestamp
+should be included in the file's name.}
+
+\item{...}{Other argument that can be passed into 'rio::export'}
+}
+\value{
+A message indicating the full path of the exported file.
 }
 \description{
-Export files to the output folder
+Export files to the 'output' folder
+}
+\examples{
+try(export_safely(mtcars))
+
 }

@@ -2,10 +2,17 @@
 % Please edit documentation in R/start_fresh.R
 \name{start_fresh}
 \alias{start_fresh}
-\title{Restart r session}
+\title{Restart R session}
 \usage{
 start_fresh()
 }
+\value{
+A clean R session
+}
 \description{
-Restart r session
+Restart R session
+}
+\examples{
+try(start_fresh())
+
 }

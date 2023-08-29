@@ -12,8 +12,30 @@ save_work(
 )
 }
 \arguments{
-\item{time_in_name}{}
+\item{folder}{The folder to which the workspace or some of its
+objects need to be saved. The default is an 'Rdata' folder within
+the 'output' folder.}
+
+\item{name}{The name of the saved workspace. If no name is provided,
+the name will be 'analysis'.}
+
+\item{objects_to_save}{A vector specifying which objects from the
+workspace need to be saved. The default is 'NULL', which will save
+all objects in the global environment.}
+
+\item{time_in_name}{A logical to indicate whether a timestamp
+should be included in the workspace's name.}
+}
+\value{
+A message indicating the full path of the saved 'Rdata'
+file. The message will also list all objects that have been saved
+within this file, and this list will also be documented in an
+accompanying 'txt' document.
 }
 \description{
 Save global objects to the output folder
+}
+\examples{
+try(save_work())
+
 }

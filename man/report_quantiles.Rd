@@ -7,8 +7,22 @@
 report_quantiles(data, summary_vrs, grouping_vrs = NULL)
 }
 \arguments{
-\item{grouping_vrs}{}
+\item{data}{A data frame including numeric variables to be summarized.}
+
+\item{summary_vrs}{A character vector specifying the numeric variables to be summarized.}
+
+\item{grouping_vrs}{A character vector specifying the grouping variables, if any.}
+}
+\value{
+A dataframe of the class 'quantiles_report', containing a
+'report' column, which report the 'median (quartile 1-quartile 3)'
+combination for each specified numeric variable, at each grouping
+key.
 }
 \description{
 Report median-quantiles summaries
+}
+\examples{
+summary_data <- report_quantiles(mtcars, summary_vrs = "mpg")
+
 }

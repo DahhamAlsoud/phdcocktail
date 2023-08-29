@@ -2,13 +2,24 @@
 % Please edit documentation in R/print.quantiles_report.R
 \name{print.quantiles_report}
 \alias{print.quantiles_report}
-\title{Define a custom print method for the quantiles_report class and make it a global function}
+\title{A custom print method for the 'quantiles_report' class}
 \usage{
-\method{print}{quantiles_report}(summary_data)
+\method{print}{quantiles_report}(x, ...)
 }
 \arguments{
-\item{summary_data}{}
+\item{x}{A data frame of the class 'quantiles_report'.}
+
+\item{...}{Other argument that can be passed into 'print'.}
+}
+\value{
+The function displays the content of the column 'report'
+in separate lines.
 }
 \description{
-Define a custom print method for the quantiles_report class and make it a global function
+A custom print method for the 'quantiles_report' class
+}
+\examples{
+try(summary_data <- report_quantiles(mtcars, summary_vrs = "mpg"))
+try(print(summary_data))
+
 }

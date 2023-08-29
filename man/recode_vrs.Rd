@@ -2,22 +2,27 @@
 % Please edit documentation in R/recode_vrs.R
 \name{recode_vrs}
 \alias{recode_vrs}
-\title{Recode specific variables based on data dictionary}
+\title{Recode variables and their levels based on a data dictionary}
 \usage{
 recode_vrs(data, data_dictionary, vrs, factor = FALSE)
 }
 \arguments{
-\item{data}{input data set}
+\item{data}{A data frame with raw data.}
 
-\item{data_dictionary}{name of the data dictionary}
+\item{data_dictionary}{A data dictionary containing labels for the variables and their levels.}
 
-\item{vrs}{a vector with the variables to be recoded}
+\item{vrs}{A character vector specifying the variables to be recoded.}
 
-\item{factor}{alogical to indicate whether the recoded variables need to be converted to factors}
+\item{factor}{A logical to indicate whether recoded variables need to be converted to factors.}
 }
 \value{
-the input data set with recoded and labelled variables
+The input data frame with recoded and labelled variables.
 }
 \description{
-Recode specific variables based on data dictionary
+Recode variables and their levels based on a data dictionary
+}
+\examples{
+try(ibd_data_recoded <- recode_vrs(data = ibd_data, data_dictionary = ibd_data_dict,
+vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE))
+
 }

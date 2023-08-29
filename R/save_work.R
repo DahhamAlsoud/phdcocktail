@@ -1,14 +1,25 @@
 #' Save global objects to the output folder
 #'
-#' @param folder
-#' @param name
-#' @param objects_to_save
-#' @param time_in_name
+#' @param folder The folder to which the workspace or some of its
+#' objects need to be saved. The default is an 'Rdata' folder within
+#' the 'output' folder.
+#' @param name The name of the saved workspace. If no name is provided,
+#' the name will be 'analysis'.
+#' @param objects_to_save A vector specifying which objects from the
+#' workspace need to be saved. The default is 'NULL', which will save
+#' all objects in the global environment.
+#' @param time_in_name A logical to indicate whether a timestamp
+#' should be included in the workspace's name.
 #'
-#' @return
-#' @export
+#' @return A message indicating the full path of the saved 'Rdata'
+#' file. The message will also list all objects that have been saved
+#' within this file, and this list will also be documented in an
+#' accompanying 'txt' document.
 #'
 #' @examples
+#' try(save_work())
+#'
+#' @export
 save_work <- function(folder = "output/Rdata", name = "analysis", objects_to_save = NULL,
                       time_in_name = TRUE) {
   # Create the output folder if it doesn't exist yet

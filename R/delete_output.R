@@ -1,14 +1,22 @@
-#' Delete files from output folder
+#' Delete files from the 'output' folder
 #'
-#' @param folder
-#' @param extensions
-#' @param which
+#' @param folder A folder from which the user wishes to delete files.
+#' The default folder is 'output'.
+#' @param which An argument through which the user can specify which file to be deleted.
+#' There are 3 valid character values for this argument: i) 'except-r' option, which will delete
+#' all files except for R script and data files, ii) 'all' option, which will delete all files in
+#' the specified folder, iii) 'extensions' option, which specify the extensions to be deleted.
+#' The default behaviour is 'except-r'.
+#' @param extensions A character vector indicating extensions of files that the user wishes to
+#' delete. The default extensions are excel extensions.
 #'
-#' @return
-#' @export
+#' @return A message listing the files that have been deleted.
 #'
 #' @examples
-delete_output <- function(folder = "output", extensions = c("xlsx", "xls"), which = NULL) {
+#' try(delete_output())
+#'
+#' @export
+delete_output <- function(folder = "output", which = NULL, extensions = c("xlsx", "xls")) {
   valid_which <- c("except-r", "all", "extensions")
 
   if (is.null(which) || !which %in% valid_which) {

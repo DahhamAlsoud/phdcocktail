@@ -1,11 +1,13 @@
-#' Load most recent work
+#' Load most recent saved R workspace
 #'
-#' @param folder
+#' @param folder The folder from which the workspace need to be loaded.
 #'
-#' @return
-#' @export
+#' @return A message indicating which workspace has been loaded.
 #'
 #' @examples
+#' try(load_recent_work())
+#'
+#' @export
 load_recent_work <- function(folder = "output") {
   # Stop if the output folder does not exist
   folder <- here::here(folder)

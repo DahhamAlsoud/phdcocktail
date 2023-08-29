@@ -1,11 +1,16 @@
-#' Define a custom print method for the quantiles_report class and make it a global function
+#' A custom print method for the 'quantiles_report' class
 #'
-#' @param summary_data
+#' @param x A data frame of the class 'quantiles_report'.
+#' @param ... Other argument that can be passed into 'print'.
 #'
-#' @return
-#' @export
+#' @return The function displays the content of the column 'report'
+#' in separate lines.
 #'
 #' @examples
-print.quantiles_report <- function(summary_data) {
-  cat(summary_data$report, sep = "\n") # Print the report column
+#' try(summary_data <- report_quantiles(mtcars, summary_vrs = "mpg"))
+#' try(print(summary_data))
+#'
+#' @export
+print.quantiles_report <- function(x, ...) {
+  cat(x$report, sep = "\n") # Print the report column
 }

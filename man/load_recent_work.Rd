@@ -2,13 +2,20 @@
 % Please edit documentation in R/load_recent_work.R
 \name{load_recent_work}
 \alias{load_recent_work}
-\title{Load most recent work}
+\title{Load most recent saved R workspace}
 \usage{
 load_recent_work(folder = "output")
 }
 \arguments{
-\item{folder}{}
+\item{folder}{The folder from which the workspace need to be loaded.}
+}
+\value{
+A message indicating which workspace has been loaded.
 }
 \description{
-Load most recent work
+Load most recent saved R workspace
+}
+\examples{
+try(load_recent_work())
+
 }

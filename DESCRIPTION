@@ -1,10 +1,15 @@
 Package: phdcocktail
-Title: What the Package Does (One Line, Title Case)
+Title: Enhance the Ease of R Experience as an Emerging Researcher
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Dahham", family = "Alsoud", email = "dahham.alsoud@gmail.com", role = c("aut", "cre"),
+    person(given = "Dahham",
+           family = "Alsoud",
+           email = "dahham.alsoud@gmail.com",
+           role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6795-6328"))
-Description: What the package does (one paragraph).
+Description: A toolkit of fucntions to help: i) efficiently export, save and reload R objects
+   within the framework of R projects, ii) effortlessly transform collected data into a publication-ready
+   format, iii) generate insightful visualizations from clinical data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -12,11 +17,13 @@ RoxygenNote: 7.2.3
 Imports:
     ggplot2,
     here,
-    RColorBrewer,
     rio,
-    rlang,
+    rstudioapi,
     scales,
+    stats,
     tools
 Depends: 
     R (>= 2.10)
 LazyData: true
+URL: https://github.com/DahhamAlsoud/phdcocktail, https://dahhamalsoud.github.io/phdcocktail/
+BugReports: https://github.com/DahhamAlsoud/phdcocktail/issues

@@ -15,13 +15,40 @@ plot_bars(
   y_axis_title = "\% Patients",
   legend_title = "Outcome",
   bar_fill = "Greys",
-  grouping = NULL,
-  ...
+  grouping = NULL
 )
 }
 \arguments{
-\item{...}{}
+\item{data}{A data frame containing outcomes data.}
+
+\item{outcome}{Variable containing outcomes to be plotted.}
+
+\item{proportion}{Variable containing proportion of patients who achieved the outcome.}
+
+\item{percentage_labelled}{Variable containing percentage of patients who achieved the outcome,
+suffixed with '\%' label.}
+
+\item{achieved}{Variable containing number of patients who achieved the outcome.}
+
+\item{total}{Variable containing total number of patients.}
+
+\item{x_axis_title}{Title of the x-axis.}
+
+\item{y_axis_title}{Title of the y-axis.}
+
+\item{legend_title}{Title of the legend.}
+
+\item{bar_fill}{Fill color of the bars.}
+
+\item{grouping}{Faceting variable.}
+}
+\value{
+A bar plot of clinical outcome.
 }
 \description{
 Plot \% of outcomes as bars
+}
+\examples{
+try(plot_bars())
+
 }
