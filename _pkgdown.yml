@@ -1,36 +1,26 @@
 url: https://dahhamalsoud.github.io/phdcocktail/
 
-<<<<<<< HEAD
 authors:
   Dahham Alsoud:
     href: https://dahhamalsoud.github.io
 
-=======
->>>>>>> eeda5c4b37ab95d2b9d70e172bd38902a7764d34
 template:
   bootstrap: 5
   bootswatch: united
 development:
   mode: auto
 
-<<<<<<< HEAD
 reference:
-=======
-refernce:
->>>>>>> eeda5c4b37ab95d2b9d70e172bd38902a7764d34
 - title: Recode
   desc: Transform collected raw data into a publication-ready format
   contents:
     - recode_vrs
 
-<<<<<<< HEAD
 - title: Plot
   desc: Generate insightful visualizations from clinical data
   contents:
     - plot_bars
 
-=======
->>>>>>> eeda5c4b37ab95d2b9d70e172bd38902a7764d34
 - title: Report
   desc: Report summary statistics in a publication-ready format
   contents:
