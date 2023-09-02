@@ -25,5 +25,5 @@ Imports:
 Depends: 
     R (>= 2.10)
 LazyData: true
-URL: https://github.com/DahhamAlsoud/phdcocktail, https://dahhamalsoud.github.io/phdcocktail/
+URL: https://dahhamalsoud.github.io/phdcocktail/, https://github.com/DahhamAlsoud/phdcocktail 
 BugReports: https://github.com/DahhamAlsoud/phdcocktail/issues

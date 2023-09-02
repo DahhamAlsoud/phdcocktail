@@ -1,7 +1,38 @@
 url: https://dahhamalsoud.github.io/phdcocktail/
+
 template:
   bootstrap: 5
   bootswatch: united
 development:
   mode: auto
+
+refernce:
+- title: Recode
+  desc: Transform collected raw data into a publication-ready format
+  contents:
+    - recode_vrs
+
+- title: Report
+  desc: Report summary statistics in a publication-ready format
+  contents:
+    - report_quantiles
+    - print.quantiles_report
+
+- title: Transport
+  desc: >
+    Transfer data between R session and the `output` folder
+  contents:
+    - export_safely
+    - save_work
+    - load_recent_work
+    - delete_output
+    - start_fresh
+
+- title: Data
+  desc: Datasets included in the package
+  contents:
+    - ibd_data_dict
+    - ibd_data1
+    - ibd_outcomes
+
 
