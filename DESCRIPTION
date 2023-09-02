@@ -5,7 +5,7 @@ Authors@R:
     person(given = "Dahham",
            family = "Alsoud",
            email = "dahham.alsoud@gmail.com",
-           role = c("aut", "cre"),
+           role = c("cre", "aut", "cph"),
            comment = c(ORCID = "0000-0002-6795-6328"))
 Description: A toolkit of fucntions to help: i) efficiently export, save and reload R objects
    within the framework of R projects, ii) effortlessly transform collected data into a publication-ready
@@ -25,5 +25,5 @@ Imports:
 Depends: 
     R (>= 2.10)
 LazyData: true
-URL: https://github.com/DahhamAlsoud/phdcocktail, https://dahhamalsoud.github.io/phdcocktail/
+URL: https://dahhamalsoud.github.io/phdcocktail/, https://github.com/DahhamAlsoud/phdcocktail 
 BugReports: https://github.com/DahhamAlsoud/phdcocktail/issues
