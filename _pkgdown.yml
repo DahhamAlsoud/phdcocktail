@@ -4,11 +4,23 @@ authors:
   Dahham Alsoud:
     href: https://dahhamalsoud.github.io
 
+development:
+  mode: auto
+
+home:
+  title: phdcocktail
+  description: A collection of functions I wrote during my phd
+
 template:
   bootstrap: 5
   bootswatch: united
-development:
-  mode: auto
+  opengraph:
+    image:
+      src: man/figures/logo.png
+      alt: "phdcocktail package from Dahham Alsoud"
+    twitter:
+      creator: "@AlsoudDahham"
+      card: summary_large_image
 
 reference:
 - title: Recode
