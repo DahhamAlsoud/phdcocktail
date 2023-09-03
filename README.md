@@ -7,10 +7,11 @@
 <!-- badges: end -->
 
 [phdcocktail](https://dahhamalsoud.github.io/phdcocktail) is a toolkit
-of fucntions to help: i) efficiently export, save and reload R objects
-within the framework of R projects, ii) effortlessly transform collected
-data into a publication-ready format, iii) generate insightful
-visualizations from clinical data.
+of functions to help: i) effortlessly transform collected data into a
+publication-ready format, ii) generate insightful visualizations from
+clinical data, iii) report summary statistics in a publication-ready
+format, iv) efficiently export, save and reload R objects within the
+framework of R projects.
 
 ## Installation
 
