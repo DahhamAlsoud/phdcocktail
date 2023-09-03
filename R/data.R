@@ -5,9 +5,9 @@
 #'
 #' @format A data frame with 53 rows and four columns:
 #' \describe{
-#'   \item{variable}{Variable name in the 'collection', i.e. 'excel', form}
+#'   \item{variable}{Variable name in the 'short', i.e. 'excel', form}
 #'   \item{variable_label}{Variable name in the publication form}
-#'   \item{value}{Value name in the 'collection', i.e. 'excel', form}
+#'   \item{value}{Value name in the 'short', i.e. 'excel', form}
 #'   \item{value_label}{Value name in the publication form}
 #' }
 "ibd_data_dict"

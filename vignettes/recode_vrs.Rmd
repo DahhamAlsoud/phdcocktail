@@ -1,0 +1,42 @@
+---
+title: "recode_vrs"
+author: "Dahham Alsoud"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{recode_vrs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Raison d’être
+Although new pragmatic platforms currently exist, great deal of research data is still being collected in `excel`, where it is easier to code variables in a `short form`. For example, birth date is commonly coded in a `short form` as "dob" instead of "Date of birth", which is the `publication form`. The same applies to the `levels` of variables, such as "F" and "M", which are both levels for the "Age" variables, and stand for "Female" and "Male", respectively.
+
+Recoding variables and their levels back to their publication form is an inevitable task during statistical analysis and reporting results. 
+
+The function `recode_vrs()` helps effortlessly transform collected data into a publication-ready format using a user-supplied `data dictionary`. Combining `recode_vrs()` with a `data dictionary` ensures `consistency` in recoding across all analyses and publications as one could easily forget how a variable was encoded in a previous analysis or publication. 
+
+## Example
+### Making table 1 of raw data
+```{r}
+library(gtsummary)
+data(ibd_data1, package = "phdcocktail")
+
+ibd_data1 |>
+  tbl_summary(include = -"patientid")
+
+```
+
+### Making table 1 after recoding
+```{r}
+library(gtsummary)
+library(phdcocktail)
+
+ibd_data_recoded <- recode_vrs(data = ibd_data1, data_dictionary = ibd_data_dict,
+vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
+
+ibd_data_recoded |>
+  tbl_summary(include = -"patientid")
+
+```
