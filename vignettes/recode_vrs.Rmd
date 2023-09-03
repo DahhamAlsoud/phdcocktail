@@ -39,4 +39,7 @@ vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
 ibd_data_recoded |>
   tbl_summary(include = -"patientid")
 
+
 ```
+
+
