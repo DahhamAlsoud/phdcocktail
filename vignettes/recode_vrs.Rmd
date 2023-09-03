@@ -20,6 +20,7 @@ The function `recode_vrs()` helps effortlessly transform collected data into a p
 ## Example
 ### Making table 1 of raw data
 ```{r}
+#| eval: false
 library(gtsummary)
 data(ibd_data1, package = "phdcocktail")
 
@@ -30,6 +31,7 @@ ibd_data1 |>
 
 ### Making table 1 after recoding
 ```{r}
+#| eval: false
 library(gtsummary)
 library(phdcocktail)
 
@@ -39,4 +41,7 @@ vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
 ibd_data_recoded |>
   tbl_summary(include = -"patientid")
 
+
 ```
+
+
