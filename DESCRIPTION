@@ -18,6 +18,7 @@ RoxygenNote: 7.2.3
 Imports:
     ggplot2,
     here,
+    RColorBrewer,
     rio,
     rstudioapi,
     scales,
