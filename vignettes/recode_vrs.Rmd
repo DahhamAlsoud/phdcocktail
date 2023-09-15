@@ -2,14 +2,9 @@
 title: "recode_vrs"
 description: "A brief introduction to recode_vrs() function"
 author: "Dahham Alsoud"
-opengraph:
-  image:
-    src: recode_vrs-in-action.png
-    alt: "recoding variables"
-  twitter:
-    creator: "@AlsoudDahham"
-    card: summary_large_image
-output: rmarkdown::html_vignette
+output:
+  rmarkdown::html_vignette:
+    toc: true
 vignette: >
   %\VignetteIndexEntry{recode_vrs}
   %\VignetteEngine{knitr::rmarkdown}
