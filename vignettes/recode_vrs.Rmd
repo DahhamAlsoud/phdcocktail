@@ -4,7 +4,7 @@ description: "A brief introduction to recode_vrs() function"
 author: "Dahham Alsoud"
 opengraph:
   image:
-    src: recode_vrs-in-action.png
+    src: ./recode_vrs-in-action.png
   twitter:
     creator: "@AlsoudDahham"
     card: summary_large_image
