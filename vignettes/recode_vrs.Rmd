@@ -4,7 +4,7 @@ description: "A brief introduction to recode_vrs() function"
 author: "Dahham Alsoud"
 opengraph:
     image:
-      src: ../man/figures/recode_vrs-in-action.png
+      src: man/figures/recode_vrs-in-action.png
     twitter:
       creator: "@AlsoudDahham"
       card: summary_large_image
@@ -100,8 +100,12 @@ View(ibd_data_recoded)
 ![](../man/figures/ibd-data-recoded.png)
 
 We can notice two changes in the new data frame compared to the original one:\
-1) Variables labels are now attached as "attributes" underneath variables names *for all variables for which a corresponding variable label could be found in the supplied dictionary*.\
-2) Values have been **replaced** by their labels *for variables specified in the `vrs` argument*.\
+
+1)  Variables labels are now attached as "attributes" underneath variables names *for all variables for which a corresponding variable label could be found in the supplied dictionary*.\
+
+2)  Values have been **replaced** by their labels *for variables specified in the `vrs` argument*.\
+
+3)  Variables specified in the `vrs` argument have been converted to `ordered factors`.
 
 Finally, let's make table one from the new recoded data...
 
