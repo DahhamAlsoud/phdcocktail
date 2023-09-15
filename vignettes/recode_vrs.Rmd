@@ -8,9 +8,7 @@ opengraph:
   twitter:
     creator: "@AlsoudDahham"
     card: summary_large_image
-output:
-  rmarkdown::html_vignette:
-    toc: true
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{recode_vrs}
   %\VignetteEngine{knitr::rmarkdown}
