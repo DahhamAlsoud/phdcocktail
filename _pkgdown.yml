@@ -15,6 +15,9 @@ template:
   bootstrap: 5
   bootswatch: united
   opengraph:
+      image:
+        src: man/figures/logo.png
+        alt: "phdcocktail package from Dahham Alsoud"
     twitter:
       creator: "@AlsoudDahham"
       card: summary_large_image
