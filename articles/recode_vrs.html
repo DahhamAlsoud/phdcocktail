@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="phdcocktail">
+<meta name="description" content="A brief introduction to recode_vrs() function">
 <title>recode_vrs • phdcocktail</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -18,8 +18,8 @@
 <script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="recode_vrs">
-<meta property="og:description" content="phdcocktail">
-<meta property="og:image" content="https://dahhamalsoud.github.io/phdcocktail/reference/figures/logo.png">
+<meta property="og:description" content="A brief introduction to recode_vrs() function">
+<meta property="og:image" content="../man/figures/recode_vrs-in-action.png">
 <meta property="og:image:alt" content="phdcocktail package from Dahham Alsoud">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@AlsoudDahham">
@@ -91,52 +91,149 @@ Alsoud</h4>
     
     
 <div class="section level2">
-<h2 id="raison-dêtre">Raison d’être<a class="anchor" aria-label="anchor" href="#raison-d%C3%AAtre"></a>
+<h2 id="razón-de-ser">Razón de ser<a class="anchor" aria-label="anchor" href="#raz%C3%B3n-de-ser"></a>
 </h2>
-<p>Although new pragmatic platforms currently exist, great deal of
-research data is still being collected in <code>excel</code>, where it
-is easier to code variables in a <code>short form</code>. For example,
-birth date is commonly coded in a <code>short form</code> as “dob”
-instead of “Date of birth”, which is the <code>publication form</code>.
-The same applies to the <code>levels</code> of variables, such as “F”
-and “M”, which are both levels for the “Age” variables, and stand for
-“Female” and “Male”, respectively.</p>
-<p>Recoding variables and their levels back to their publication form is
+<p>Although new pragmatic platforms (such as RedCap) currently exist,
+great deal of research data is still being collected directly in
+<code>excel</code>, where it is easier to code variables in a
+<code>short form</code>. For example, “birth date” is commonly coded in
+a <code>short form</code> as “dob” instead of “Date of birth”, which is
+the <code>publication form</code>. The same applies to the
+<code>values</code> of variables, such as “F” and “M”, which are both
+values for the “Gender” variable, and stand for “Female” and “Male”,
+respectively.</p>
+<p>Recoding variables and their values back to their publication form is
 an inevitable task during statistical analysis and reporting
 results.</p>
-<p>The function <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> helps effortlessly transform
+<p>The <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> function helps effortlessly transform
 collected data into a publication-ready format using a user-supplied
 <code>data dictionary</code>. Combining <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> with a
 <code>data dictionary</code> ensures <code>consistency</code> in
-recoding across all analyses and publications as one could easily forget
-how a variable was encoded in a previous analysis or publication.</p>
+recoding research terms across all analyses and publications as one
+could easily forget how a variable or a term was expressed in a previous
+analysis or publication. The recoded data can then be further used make
+figures, table one…etc.</p>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="terminología">Terminología<a class="anchor" aria-label="anchor" href="#terminolog%C3%ADa"></a>
 </h2>
-<div class="section level3">
-<h3 id="making-table-1-of-raw-data">Making table 1 of raw data<a class="anchor" aria-label="anchor" href="#making-table-1-of-raw-data"></a>
-</h3>
+<p>In the above introduction, we have mentioned 4 terms:<br><code>variable</code>, such as “gender”: this is the
+<code>short form</code> of a variable usually used un <code>excel</code>
+sheets.<br><code>variable label</code>, such as “Gender”: this is the
+<code>publication form</code> that we usually encounter in summary
+tables.<br><code>value</code>, such as “F” and “M”, which are both values for the
+“Gender” variable.<br><code>value label</code>, such as “Female” and “Male”, which are the
+labels of the “Gender” values “F” and “M”, respectively.</p>
+<p>The inflammatory bowel disease (ibd) data dictionary provided in the
+<code>phdcocktail</code> package consists of 4 columns, one for each of
+the above-described terms.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dahhamalsoud.github.io/phdcocktail/">phdcocktail</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ibd_data_dict</span>, package <span class="op">=</span> <span class="st">"phdcocktail"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">ibd_data_dict</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/ibd-data-dict.png"></p>
+<p>All 4 columns are required in order for <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> to
+function as needed. Therefore, user-supplied data dictionaries
+<strong>should</strong> logically include the same columns!</p>
+</div>
+<div class="section level2">
+<h2 id="uso">Uso<a class="anchor" aria-label="anchor" href="#uso"></a>
+</h2>
+<p>When passing a data frame with raw data and a data dictionary to
+<code><a href="../reference/recode_vrs.html">recode_vrs()</a></code>, the function will:<br></p>
+<ol style="list-style-type: decimal">
+<li><p>Search the data dictionary for <code>variables labels</code>
+<strong><em>for all variables</em></strong>, and attach these to the
+corresponding variables in the original data frame as “label
+attributes”. these attributes can be recognized by
+<code>gtsummary::tbl_summary()</code> or other functions for
+printing.<br></p></li>
+<li><p>Search the data dictionary for <code>values labels</code>
+<strong><em>only for variables specified in the <code>vrs</code>
+argument</em></strong>. These values will be “recoded” to their
+corresponding labels.</p></li>
+<li><p>If the <code>factor</code> argument is set to <code>TRUE</code>,
+variables specified in the <code>vrs</code> argument will be converted
+to <code>ordered factors</code>, and the order of the levels will be
+inherited from the order of appearance of the values in the data
+dictionary. These <code>ordered factors</code> are important to have the
+desired display of levels when passing the resulted data frame to
+functions from <code>ggplot2</code>,
+<code>gtsummary</code>…etc.</p></li>
+</ol>
+<p>To see <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> in action, we will make table one
+from the <code>ibd_data1</code> available with the package:</p>
+<p>Let’s first view this data frame…</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ibd_data1</span>, package <span class="op">=</span> <span class="st">"phdcocktail"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">ibd_data1</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/ibd-data-raw.png"></p>
+<p>We can see that variables and their values are stored in a
+<code>short form</code>. We can make a table one using the data in its
+current form, but it won’t be suitable to be published!</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ibd_data1</span>, package <span class="op">=</span> <span class="st">"phdcocktail"</span><span class="op">)</span></span>
+<span><span class="fu">theme_gtsummary_compact</span><span class="op">(</span><span class="op">)</span> <span class="co"># to make a compact table</span></span>
 <span></span>
 <span><span class="va">ibd_data1</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">tbl_summary</span><span class="op">(</span>include <span class="op">=</span> <span class="op">-</span><span class="st">"patientid"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="making-table-1-after-recoding">Making table 1 after recoding<a class="anchor" aria-label="anchor" href="#making-table-1-after-recoding"></a>
-</h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dahhamalsoud.github.io/phdcocktail/">phdcocktail</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">ibd_data_recoded</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recode_vrs.html">recode_vrs</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ibd_data1</span>, data_dictionary <span class="op">=</span> <span class="va">ibd_data_dict</span>,</span>
+<span>  <span class="fu">tbl_summary</span><span class="op">(</span>include <span class="op">=</span> <span class="op">-</span><span class="st">"patientid"</span><span class="op">)</span> <span class="co"># we don't need patient IDs in our table</span></span></code></pre></div>
+<p><img src="../reference/figures/table1-raw.png"></p>
+<p>Now let’s recode this data frame using <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code>, and
+view the new, recoded data frame, which we name here as
+<code>ibd_data_recoded</code>…</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ibd_data_recoded</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recode_vrs.html">recode_vrs</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ibd_data1</span>, data_dictionary <span class="op">=</span> <span class="va">ibd_data_dict</span>,</span>
 <span>vrs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"disease_location"</span>, <span class="st">"disease_behaviour"</span>, <span class="st">"gender"</span><span class="op">)</span>, factor <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">ibd_data_recoded</span> <span class="op">|&gt;</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">ibd_data_recoded</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/ibd-data-recoded.png"></p>
+<p>We can notice two changes in the new data frame compared to the
+original one:<br>
+1) Variables labels are now attached as “attributes” underneath
+variables names <em>for all variables for which a corresponding variable
+label could be found in the supplied dictionary</em>.<br>
+2) Values have been <strong>replaced</strong> by their labels <em>for
+variables specified in the <code>vrs</code> argument</em>.<br></p>
+<p>Finally, let’s make table one from the new recoded data…</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ibd_data_recoded</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>include <span class="op">=</span> <span class="op">-</span><span class="st">"patientid"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/table1-recoded.png"></p>
 </div>
+<div class="section level2">
+<h2 id="some-questions-that-might-come-to-mind">Some questions that might come to mind…<a class="anchor" aria-label="anchor" href="#some-questions-that-might-come-to-mind"></a>
+</h2>
+<ul>
+<li><p><em>Why not “recode” variables to their labels? who only attach
+these labels as “label attributes”?</em><br>
+If we would recode variables names by their labels, then one would have
+to change the code in the subsequent steps in the analysis because
+variables names have changed! Since variable labels are only needed to
+print labels, attaching them only as “attributes” is a nice way to
+provide publishable names, but in the same time preserve original
+variable names.<br></p></li>
+<li><p><em>Why not simply pass these variables labels directly to
+<code>gtsummary::tbl_summary()</code>?</em><br>
+This would be tedious and a waste of time to do each time assuming that
+one is working with the same topic/disease. In addition, this is hugely
+prone to errors and inconsistencies across analyses and papers.<br></p></li>
+<li><p><em>How is <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> different than
+<code>Hmisc::upData()</code>?</em><br>
+In <code>Hmisc::upData()</code>, one would repetitively have to provide
+a list/vector with labels to the <code>label</code> argument, and this
+list/vector should be of the same length as the original data frame. In
+<code><a href="../reference/recode_vrs.html">recode_vrs()</a></code>, none of these conditions is required.
+<code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> will automatically search for “whatever”
+variables labels it could find in the data dictionary. (attaching labels
+as attributes have no side effects or harm on other analyses steps! so
+why not simply gettin ’em all!)</p></li>
+<li><p><em>How is <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> different than
+<code>expss::apply_labels()</code>?</em><br>
+In <code>expss::apply_labels()</code>, one would also need to pass the
+labels manually.</p></li>
+</ul>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
