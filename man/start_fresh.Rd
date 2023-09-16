@@ -14,6 +14,7 @@ Restart R session
 }
 \examples{
 \dontrun{
+library(phdcocktail)
 start_fresh()
 }
 

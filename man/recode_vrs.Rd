@@ -23,6 +23,8 @@ Recode variables and their levels based on a data dictionary
 }
 \examples{
 \dontrun{
+library(phdcocktail)
+data(ibd_data1, package = "phdcocktail")
 ibd_data_recoded <- recode_vrs(data = ibd_data1, data_dictionary = ibd_data_dict,
 vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
 }

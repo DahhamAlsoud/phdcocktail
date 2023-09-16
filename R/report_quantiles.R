@@ -11,7 +11,9 @@
 #'
 #' @examples
 #' \dontrun{
+#' library(phdcocktail)
 #' summary_data <- report_quantiles(mtcars, summary_vrs = "mpg")
+#' print(summary_data)
 #' }
 #'
 #' @export

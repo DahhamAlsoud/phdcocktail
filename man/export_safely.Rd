@@ -41,6 +41,7 @@ Export files to the 'output' folder
 }
 \examples{
 \dontrun{
+library(phdcocktail)
 export_safely(mtcars)
 }
 

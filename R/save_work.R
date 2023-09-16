@@ -18,6 +18,7 @@
 #'
 #' @examples
 #' \dontrun{
+#' library(phdcocktail)
 #' save_work()
 #' }
 #'

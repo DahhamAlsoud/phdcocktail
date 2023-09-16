@@ -27,6 +27,7 @@ Delete files from the 'output' folder
 }
 \examples{
 \dontrun{
+library(phdcocktail)
 delete_output()
 }
 

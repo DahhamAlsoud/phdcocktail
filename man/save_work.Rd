@@ -37,6 +37,7 @@ Save global objects to the 'output' folder
 }
 \examples{
 \dontrun{
+library(phdcocktail)
 save_work()
 }
 

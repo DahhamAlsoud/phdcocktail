@@ -4,6 +4,7 @@
 #'
 #' @examples
 #' \dontrun{
+#' library(phdcocktail)
 #' start_fresh()
 #' }
 #'

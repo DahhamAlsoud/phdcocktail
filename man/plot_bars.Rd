@@ -50,7 +50,9 @@ Plot \% of outcomes as bars
 }
 \examples{
 \dontrun{
-plot_bars()
+library(phdcocktail)
+data(ibd_outcomes, package = "phdcocktail")
+plot_bars(ibd_outcomes)
 }
 
 }

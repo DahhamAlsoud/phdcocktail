@@ -17,6 +17,7 @@ Load most recent saved R workspace
 }
 \examples{
 \dontrun{
+library(phdcocktail)
 load_recent_work()
 }
 
