@@ -93,12 +93,12 @@ Alsoud</h4>
 <div class="section level2">
 <h2 id="razón-de-ser">Razón de ser<a class="anchor" aria-label="anchor" href="#raz%C3%B3n-de-ser"></a>
 </h2>
-<p>Although new pragmatic platforms (such as RedCap) currently exist,
+<p>Although new pragmatic platforms (such as RedCap) currently exist, a
 great deal of research data is still being collected directly in
-<code>excel</code>, where it is easier to code variables in a
-<code>short form</code>. For example, “birth date” is commonly coded in
-a <code>short form</code> as “dob” instead of “Date of birth”, which is
-the <code>publication form</code>. The same applies to the
+<code>excel</code>, where it is easier to code <code>variables</code> in
+a <code>short form</code>. For example, “birth date” is commonly coded
+in a <code>short form</code> as “dob” instead of “Date of birth”, which
+is the <code>publication form</code>. The same applies to the
 <code>values</code> of variables, such as “F” and “M”, which are both
 values for the “Gender” variable, and stand for “Female” and “Male”,
 respectively.</p>
@@ -110,23 +110,25 @@ collected data into a publication-ready format using a user-supplied
 <code>data dictionary</code>. Combining <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> with a
 <code>data dictionary</code> ensures <code>consistency</code> in
 recoding research terms across all analyses and publications as one
-could easily forget how a variable or a term was expressed in a previous
-analysis or publication. The recoded data can then be further used make
-figures, table one…etc.</p>
+could easily forget how a variable or a term was <code>labelled</code>
+in a previous analysis or publication. The recoded data can then be
+further used to make figures, table one…etc.</p>
 </div>
 <div class="section level2">
 <h2 id="terminología">Terminología<a class="anchor" aria-label="anchor" href="#terminolog%C3%ADa"></a>
 </h2>
-<p>In the above introduction, we have mentioned 4 terms:<br><code>variable</code>, such as “gender”: this is the
-<code>short form</code> of a variable usually used un <code>excel</code>
-sheets.<br><code>variable label</code>, such as “Gender”: this is the
-<code>publication form</code> that we usually encounter in summary
-tables.<br><code>value</code>, such as “F” and “M”, which are both values for the
-“Gender” variable.<br><code>value label</code>, such as “Female” and “Male”, which are the
-labels of the “Gender” values “F” and “M”, respectively.</p>
-<p>The inflammatory bowel disease (ibd) data dictionary provided in the
-<code>phdcocktail</code> package consists of 4 columns, one for each of
-the above-described terms.</p>
+<p>In the above introduction, we have referred to 4 terms:<br></p>
+<p><code>Variable</code>, such as “dob”: this is the
+<code>short form</code> of “Date of birth” that is usually used in
+<code>excel</code> sheets.<br><code>Variable label</code>, such as “Date of birth”: this is the
+<code>publication form</code> that we usually encounter in
+publications.<br><code>Value</code>, such as “F” and “M”, which are both values for the
+“Gender” variable.<br><code>Value label</code>, such as “Female” and “Male”, which are the
+labels of the “Gender” values, “F” and “M”, respectively.</p>
+<p>The inflammatory bowel disease (IBD) data dictionary
+<code>ibd_data_dict</code> provided in the <code>phdcocktail</code>
+package consists of 4 columns, one for each of the above-described
+terms.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dahhamalsoud.github.io/phdcocktail/">phdcocktail</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ibd_data_dict</span>, package <span class="op">=</span> <span class="st">"phdcocktail"</span><span class="op">)</span></span>
@@ -135,7 +137,7 @@ the above-described terms.</p>
 <p><img src="../reference/figures/ibd-data-dict.png"></p>
 <p>All 4 columns are required in order for <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> to
 function as needed. Therefore, user-supplied data dictionaries
-<strong>should</strong> logically include the same columns!</p>
+<strong>should</strong> logically have these columns!</p>
 </div>
 <div class="section level2">
 <h2 id="uso">Uso<a class="anchor" aria-label="anchor" href="#uso"></a>
@@ -158,7 +160,7 @@ variables specified in the <code>vrs</code> argument will be converted
 to <code>ordered factors</code>, and the order of the levels will be
 inherited from the order of appearance of the values in the data
 dictionary. These <code>ordered factors</code> are important to have the
-desired display of levels when passing the resulted data frame to
+desired display of values when passing the resulted data frame to
 functions from <code>ggplot2</code>,
 <code>gtsummary</code>…etc.</p></li>
 </ol>
@@ -170,7 +172,7 @@ from the <code>ibd_data1</code> available with the package:</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">ibd_data1</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/ibd-data-raw.png"></p>
-<p>We can see that variables and their values are stored in a
+<p>We can see that variables and their values are stored in the
 <code>short form</code>. We can make a table one using the data in its
 current form, but it won’t be suitable to be published!</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -189,12 +191,12 @@ view the new, recoded data frame, which we name here as
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">ibd_data_recoded</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/ibd-data-recoded.png"></p>
-<p>We can notice two changes in the new data frame compared to the
+<p>We can notice three changes in the new data frame compared to the
 original one:<br></p>
 <ol style="list-style-type: decimal">
 <li><p>Variables labels are now attached as “attributes” underneath
-variables names <em>for all variables for which a corresponding variable
-label could be found in the supplied dictionary</em>.<br></p></li>
+variables names <em>for all variables</em> for which a corresponding
+variable label could be found in the supplied dictionary.<br></p></li>
 <li><p>Values have been <strong>replaced</strong> by their labels
 <em>for variables specified in the <code>vrs</code> argument</em>.<br></p></li>
 <li><p>Variables specified in the <code>vrs</code> argument have been
@@ -212,31 +214,23 @@ converted to <code>ordered factors</code>.</p></li>
 <ul>
 <li><p><em>Why not “recode” variables to their labels? who only attach
 these labels as “label attributes”?</em><br>
-If we would recode variables names by their labels, then one would have
-to change the code in the subsequent steps in the analysis because
-variables names have changed! Since variable labels are only needed to
-print labels, attaching them only as “attributes” is a nice way to
-provide publishable names, but in the same time preserve original
-variable names.<br></p></li>
-<li><p><em>Why not simply pass these variables labels directly to
+If we would recode variables names to their labels, then one would have
+to change these also in the code in the subsequent steps in the analysis
+because variables names have changed! Since variable labels are only
+needed for printing, attaching them only as “attributes” is a nice way
+to provide publishable names, but in the same time preserve original
+variable names while scripting.<br></p></li>
+<li><p><em>Why not simply pass these variables/values labels manually to
+printing functions such as
 <code>gtsummary::tbl_summary()</code>?</em><br>
-This would be tedious and a waste of time to do each time assuming that
-one is working with the same topic/disease. In addition, this is hugely
+This would be tedious and a waste of time to repeat in each analysis (or
+maybe several times in one analysis!) assuming that one is working with
+the same topic/disease. In addition, passing labels manually is hugely
 prone to errors and inconsistencies across analyses and papers.<br></p></li>
-<li><p><em>How is <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> different than
-<code>Hmisc::upData()</code>?</em><br>
-In <code>Hmisc::upData()</code>, one would repetitively have to provide
-a list/vector with labels to the <code>label</code> argument, and this
-list/vector should be of the same length as the original data frame. In
-<code><a href="../reference/recode_vrs.html">recode_vrs()</a></code>, none of these conditions is required.
-<code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> will automatically search for “whatever”
-variables labels it could find in the data dictionary. (attaching labels
-as attributes have no side effects or harm on other analyses steps! so
-why not simply gettin ’em all!)</p></li>
-<li><p><em>How is <code><a href="../reference/recode_vrs.html">recode_vrs()</a></code> different than
-<code>expss::apply_labels()</code>?</em><br>
-In <code>expss::apply_labels()</code>, one would also need to pass the
-labels manually.</p></li>
+<li><p><em>Are there other functions from other packages that can recode
+variables/values and attach label attributes?</em><br>
+Yes, such as <code>Hmisc::upData()</code>,
+<code>expss::apply_labels()</code> and others….</p></li>
 </ul>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
