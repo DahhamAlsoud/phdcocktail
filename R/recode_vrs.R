@@ -16,47 +16,57 @@
 #'}
 #'
 #' @export
-recode_vrs <- function(data, data_dictionary, vrs, factor = FALSE) {
-  # If none of the provided variables exist in both the analysis data frame and data dictionary, then STOP!
+recode_vrs <- function(data, data_dictionary, vrs = NULL, factor = FALSE) {
+  # If no variables have been supplied, warn the user!
+  if (is.null(vrs)) {
+    warning("It seems that you have left the 'vrs' argument empty. recode_vrs() will look for available 'variables labels'\n  To also get 'values labels', please pass the desired variables to 'vrs' argument")
+  }
+
+  # If none of the provided variables exist in both the analysis df and data dictionary, warn the user!
   existing_vrs <- vrs[vrs %in% names(data) & vrs %in% data_dictionary$variable]
 
-  if (length(existing_vrs) == 0) stop("None of the provided variables exist in both the analysis data frame and the data dictionary!\n  Please re-check your input!!")
+  if (!is.null(vrs) & length(existing_vrs) == 0) {
+    warning("None of the provided variables exist in both the analysis data frame and the data dictionary!\n  Please re-check your input in order to get 'values labels'!!\n  recode_vrs() will look for available 'variables labels'")
+  }
 
-  # Loop through each variable to be recoded
-  for (variable_name in vrs) {
-    # Check if the variable exists in the analysis data frame and data dictionary
-    if (variable_name %in% names(data) &&
-      variable_name %in% data_dictionary$variable) {
-      # Get the mapping for the current variable from the data dictionary
-      mapping <- data_dictionary[data_dictionary$variable == variable_name, ]
+  # If some or all of the provided variables exist in both the analysis df and data dictionary, recode the values with their labels
+  if (!is.null(vrs) & length(existing_vrs) > 0) {
+    # Loop through each variable to be recoded
+    for (variable_name in vrs) {
+      # Check if the variable exists in the analysis dataframe and data dictionary
+      if (variable_name %in% names(data) &&
+          variable_name %in% data_dictionary$variable) {
+        # Get the mapping for the current variable from the data dictionary
+        mapping <- data_dictionary[data_dictionary$variable == variable_name, ]
 
-      # Recode the values in the analysis data frame using the mapping
-      recoded_values <- ifelse(data[[variable_name]] %in% mapping$value,
-        mapping$value_label[match(data[[variable_name]], mapping$value)],
-        data[[variable_name]]
-      )
-
-      # Warn the user about any missing mappings values in the current variable
-      missing_values <- data[[variable_name]][!(data[[variable_name]] %in% mapping$value)]
-      missing_values <- unique(missing_values)
-      if (length(missing_values) > 0) {
-        warning(
-          paste("Variable '", variable_name, "' has no corresponding mapping for value(s): ", paste(missing_values, collapse = ", "), sep = ""),
-          "\n  if you chose factor = TRUE, ", paste(missing_values[!is.na(missing_values)], collapse = " & "), " will be converted to NA!"
+        # Recode the values in the analysis dataframe using the mapping
+        recoded_values <- ifelse(data[[variable_name]] %in% mapping$value,
+                                 mapping$value_label[match(data[[variable_name]], mapping$value)],
+                                 data[[variable_name]]
         )
-      }
 
-      # Update the analysis dataframe with the recoded values
-      data[[variable_name]] <- recoded_values
+        # Warn the user about any missing mappings values in the current variable
+        missing_values <- data[[variable_name]][!(data[[variable_name]] %in% mapping$value)]
+        missing_values <- unique(missing_values)
+        if (length(missing_values) > 0) {
+          warning(
+            paste("Variable '", variable_name, "' has no corresponding mapping for value(s): ", paste(missing_values, collapse = ", "), sep = ""),
+            "\n  if you chose factor = TRUE, ", paste(missing_values[!is.na(missing_values)], collapse = " & "), " will be converted to NA!"
+          )
+        }
 
-      # Convert the variable to an ordered factor if the factor argument is TRUE
-      if (factor) {
-        levels_order <- unique(mapping$value_label)
-        data[[variable_name]] <- factor(data[[variable_name]], levels = levels_order, ordered = TRUE)
+        # Update the analysis dataframe with the recoded values
+        data[[variable_name]] <- recoded_values
+
+        # Convert the variable to an ordered factor if the factor argument is TRUE
+        if (factor) {
+          levels_order <- unique(mapping$value_label)
+          data[[variable_name]] <- factor(data[[variable_name]], levels = levels_order, ordered = TRUE)
+        }
+      } else {
+        # Print a warning if the variable is not found in either the analysis dataframe or data dictionary
+        warning(paste("Variable '", variable_name, "' not found in the analysis dataframe or data dictionary. Skipping!!", sep = ""))
       }
-    } else {
-      # Print a warning if the variable is not found in either the analysis dataframe or data dictionary
-      warning(paste("Variable '", variable_name, "' not found in the analysis dataframe or data dictionary. Skipping!!", sep = ""))
     }
   }
 

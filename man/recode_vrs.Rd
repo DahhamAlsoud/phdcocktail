@@ -4,7 +4,7 @@
 \alias{recode_vrs}
 \title{Recode variables and their levels based on a data dictionary}
 \usage{
-recode_vrs(data, data_dictionary, vrs, factor = FALSE)
+recode_vrs(data, data_dictionary, vrs = NULL, factor = FALSE)
 }
 \arguments{
 \item{data}{A data frame with raw data.}
