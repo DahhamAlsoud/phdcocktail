@@ -26,6 +26,11 @@ Imports:
     tools
 Depends: 
     R (>= 2.10)
+Suggests:
+    knitr,
+    rmarkdown
+VignetteBuilder: 
+    knitr
 LazyData: true
 URL: https://dahhamalsoud.github.io/phdcocktail/, https://github.com/DahhamAlsoud/phdcocktail 
 BugReports: https://github.com/DahhamAlsoud/phdcocktail/issues
