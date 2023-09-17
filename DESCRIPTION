@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person(given = "Dahham",
            family = "Alsoud",
-           email = "dahham.alsoud@gmail.com",
+           email = "dahhamalsoud@gmail.com",
            role = c("cre", "aut", "cph"),
            comment = c(ORCID = "0000-0002-6795-6328"))
 Description: A toolkit of functions to help: i) effortlessly transform collected data into a 
