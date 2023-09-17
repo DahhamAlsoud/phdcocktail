@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-[phdcocktail](https://dahhamalsoud.github.io/phdcocktail) is a
+[phdcocktail](https://dahhamalsoud.github.io/phdcocktail/) is a
 collection of functions [I](https://dahhamalsoud.github.io) wrote during
 my PhD. These functions help: i) effortlessly transform collected data
 into a publication-ready format, ii) generate insightful visualizations
