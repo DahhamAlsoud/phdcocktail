@@ -1,6 +1,6 @@
 Package: phdcocktail
 Title: Enhance the Ease of R Experience as an Emerging Researcher
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Dahham",
            family = "Alsoud",
