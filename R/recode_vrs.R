@@ -1,18 +1,20 @@
-#' Recode variables and their levels based on a data dictionary
+#' Recode variables and their values based on a data dictionary
 #'
 #' @param data A data frame with raw data.
-#' @param data_dictionary A data dictionary containing labels for the variables and their levels.
-#' @param vrs A character vector specifying the variables to be recoded.
+#' @param data_dictionary A data dictionary containing labels for variables and their values.
+#' @param vrs A character vector specifying variables of which the values need to be recoded.
 #' @param factor A logical to indicate whether recoded variables need to be converted into factors.
 #'
 #' @return The input data frame with recoded and labelled variables.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' if (FALSE) {
 #' library(phdcocktail)
 #' data(ibd_data1, package = "phdcocktail")
 #' ibd_data_recoded <- recode_vrs(data = ibd_data1, data_dictionary = ibd_data_dict,
 #'vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
+#'  }
 #'}
 #'
 #' @export

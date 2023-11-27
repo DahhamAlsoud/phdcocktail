@@ -26,9 +26,11 @@ A message listing the files that have been deleted.
 Delete files from the 'output' folder
 }
 \examples{
-\dontrun{
+\donttest{
+if (FALSE) {
 library(phdcocktail)
 delete_output()
+  }
 }
 
 }

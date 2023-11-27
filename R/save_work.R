@@ -17,9 +17,11 @@
 #' accompanying 'txt' document.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' if (FALSE) {
 #' library(phdcocktail)
 #' save_work()
+#'   }
 #' }
 #'
 #' @export

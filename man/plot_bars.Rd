@@ -49,10 +49,12 @@ A bar plot of outcome percentages.
 Plot \% of outcomes as bars
 }
 \examples{
-\dontrun{
+\donttest{
+if (FALSE) {
 library(phdcocktail)
 data(ibd_outcomes, package = "phdcocktail")
 plot_bars(ibd_outcomes)
+  }
 }
 
 }

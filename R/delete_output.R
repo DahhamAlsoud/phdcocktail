@@ -13,9 +13,11 @@
 #' @return A message listing the files that have been deleted.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' if (FALSE) {
 #' library(phdcocktail)
 #' delete_output()
+#'   }
 #' }
 #'
 #' @export

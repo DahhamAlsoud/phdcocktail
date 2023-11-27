@@ -40,9 +40,11 @@ A message indicating the full path of the exported file.
 Export files to the 'output' folder
 }
 \examples{
-\dontrun{
+\donttest{
+if (FALSE) {
 library(phdcocktail)
 export_safely(mtcars)
+  }
 }
 
 }

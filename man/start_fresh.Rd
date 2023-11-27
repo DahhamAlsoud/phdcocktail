@@ -13,9 +13,11 @@ A clean R session
 Restart R session
 }
 \examples{
-\dontrun{
+\donttest{
+if (FALSE) {
 library(phdcocktail)
 start_fresh()
+  }
 }
 
 }

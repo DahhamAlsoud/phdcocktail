@@ -28,6 +28,7 @@
 #'   \item{crp_mg_l}{C-reactive protein (mg/L)}
 #'   \item{calprotectin_ug_g}{Faecal calprotectin (ug/g)}
 #' }
+#' @source Randomly generated data
 "ibd_data1"
 
 

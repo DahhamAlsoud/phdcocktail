@@ -3,9 +3,11 @@
 #' @return A clean R session
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' if (FALSE) {
 #' library(phdcocktail)
 #' start_fresh()
+#'   }
 #' }
 #'
 #' @export

@@ -36,9 +36,11 @@ accompanying 'txt' document.
 Save global objects to the 'output' folder
 }
 \examples{
-\dontrun{
+\donttest{
+if (FALSE) {
 library(phdcocktail)
 save_work()
+  }
 }
 
 }

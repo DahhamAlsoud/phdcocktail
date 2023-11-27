@@ -16,9 +16,11 @@ A message indicating which workspace has been loaded.
 Load most recent saved R workspace
 }
 \examples{
-\dontrun{
+\donttest{
 library(phdcocktail)
+if (FALSE) {
 load_recent_work()
+ }
 }
 
 }

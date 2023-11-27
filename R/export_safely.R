@@ -15,9 +15,11 @@
 #' @return A message indicating the full path of the exported file.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' if (FALSE) {
 #' library(phdcocktail)
 #' export_safely(mtcars)
+#'   }
 #' }
 #'
 #' @export

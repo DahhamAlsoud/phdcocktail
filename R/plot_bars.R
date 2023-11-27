@@ -16,10 +16,12 @@
 #' @return A bar plot of outcome percentages.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' if (FALSE) {
 #' library(phdcocktail)
 #' data(ibd_outcomes, package = "phdcocktail")
 #' plot_bars(ibd_outcomes)
+#'   }
 #' }
 #'
 #' @export

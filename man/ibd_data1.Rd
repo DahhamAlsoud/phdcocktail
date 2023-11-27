@@ -16,6 +16,9 @@ Two data frames with each 30 rows and six columns:
 \item{calprotectin_ug_g}{Faecal calprotectin (ug/g)}
 }
 }
+\source{
+Randomly generated data
+}
 \usage{
 ibd_data1
 
