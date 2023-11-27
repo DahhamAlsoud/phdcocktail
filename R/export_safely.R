@@ -1,8 +1,6 @@
-#' Export files to the 'output' folder
+#' Export files without overwriting
 #'
 #' @param data The object to be exported.
-#' @param folder The folder to which the object need to be exported.
-#' The default is a 'data' folder within the 'output' folder.
 #' @param name The name of the exported file. If no name is provided,
 #' the file will inherit the object's name.
 #' @param format The format of the exported file. Default is 'xlsx'.
@@ -12,24 +10,18 @@
 #' should be included in the file's name.
 #' @param ... Other argument that can be passed to 'rio::export'
 #'
-#' @return A message indicating the full path of the exported file.
+#' @return A message indicating the full path to the exported file.
 #'
 #' @examples
 #' \donttest{
 #' if (FALSE) {
-#' library(phdcocktail)
-#' export_safely(mtcars)
-#'   }
+#'   library(phdcocktail)
+#'   export_safely(mtcars)
+#' }
 #' }
 #'
 #' @export
-export_safely <- function(data, folder = "output/data", name = NULL, format = "xlsx", overwrite = FALSE, time_in_name = FALSE, ...) {
-  # Create the output folder if it does not exist yet
-  folder <- here::here(folder)
-  if (!dir.exists(folder)) {
-    dir.create(folder, recursive = TRUE)
-  }
-
+export_safely <- function(data, name = NULL, format = "xlsx", overwrite = FALSE, time_in_name = FALSE, ...) {
   # Generate file name and a path
   base_filename <- deparse(substitute(data))
 
@@ -40,7 +32,7 @@ export_safely <- function(data, folder = "output/data", name = NULL, format = "x
     } else {
       full_filename <- paste0(base_filename, ".", format)
     }
-    path <- file.path(folder, full_filename)
+    path <- full_filename
 
     # Generate a unique file name if overwrite is FALSE
     if (!overwrite) {
@@ -53,7 +45,7 @@ export_safely <- function(data, folder = "output/data", name = NULL, format = "x
           } else {
             index_filename <- paste0(base_filename, "-", sprintf("%02d", index), ".", format)
           }
-          path <- file.path(folder, index_filename)
+          path <- index_filename
           index <- index + 1
         }
 
@@ -64,7 +56,7 @@ export_safely <- function(data, folder = "output/data", name = NULL, format = "x
     # Export the file with a unique name
     rio::export(data, file = path, ...)
 
-    message("File exported successfully: ", path)
+    message("File exported successfully: ", here::here(path))
   } else {
     if (time_in_name) {
       timestamp <- format(Sys.time(), "%Y%m%d%H%M%S")
@@ -72,7 +64,7 @@ export_safely <- function(data, folder = "output/data", name = NULL, format = "x
     } else {
       custom_filename <- paste0(name, ".", format)
     }
-    custom_path <- file.path(folder, custom_filename)
+    custom_path <- custom_filename
     # Check if the custom file name already exists
     if (!overwrite) {
       if (file.exists(custom_path)) {
@@ -84,7 +76,7 @@ export_safely <- function(data, folder = "output/data", name = NULL, format = "x
           } else {
             index_filename <- paste0(name, "-", sprintf("%02d", index), ".", format)
           }
-          custom_path <- file.path(folder, index_filename)
+          custom_path <- index_filename
           index <- index + 1
         }
         if (custom_filename == base_filename) {
@@ -97,6 +89,6 @@ export_safely <- function(data, folder = "output/data", name = NULL, format = "x
     # Export the file with a unique custom name
     rio::export(data, file = custom_path, ...)
 
-    message("File exported successfully: ", custom_path)
+    message("File exported successfully: ", here::here(custom_path))
   }
 }

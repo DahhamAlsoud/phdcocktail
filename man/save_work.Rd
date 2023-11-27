@@ -2,20 +2,11 @@
 % Please edit documentation in R/save_work.R
 \name{save_work}
 \alias{save_work}
-\title{Save global objects to the 'output' folder}
+\title{Save (some) global objects without overwriting}
 \usage{
-save_work(
-  folder = "output/Rdata",
-  name = "analysis",
-  objects_to_save = NULL,
-  time_in_name = TRUE
-)
+save_work(name = "analysis", objects_to_save = NULL, time_in_name = TRUE)
 }
 \arguments{
-\item{folder}{The folder to which the workspace or some of its
-objects need to be saved. The default is an 'Rdata' folder within
-the 'output' folder.}
-
 \item{name}{The name of the saved workspace. If no name is provided,
 the name will be 'analysis'.}
 
@@ -24,23 +15,21 @@ workspace need to be saved. The default is 'NULL', which will save
 all objects in the global environment.}
 
 \item{time_in_name}{A logical to indicate whether a timestamp
-should be included in the workspace's name.}
+should be included in the file's name.}
 }
 \value{
-A message indicating the full path of the saved 'Rdata'
-file. The message will also list all objects that have been saved
-within this file, and this list will also be documented in an
-accompanying 'txt' document.
+A message indicating full paths to the saved '.Rdata'
+file and a '.txt' list of its objects.
 }
 \description{
-Save global objects to the 'output' folder
+Save (some) global objects without overwriting
 }
 \examples{
 \donttest{
 if (FALSE) {
-library(phdcocktail)
-save_work()
-  }
+  library(phdcocktail)
+  save_work()
+}
 }
 
 }

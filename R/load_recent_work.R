@@ -8,8 +8,8 @@
 #' \donttest{
 #' library(phdcocktail)
 #' if (FALSE) {
-#' load_recent_work()
-#'  }
+#'   load_recent_work()
+#' }
 #' }
 #'
 #' @export

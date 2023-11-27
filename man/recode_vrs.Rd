@@ -13,7 +13,8 @@ recode_vrs(data, data_dictionary, vrs = NULL, factor = FALSE)
 
 \item{vrs}{A character vector specifying variables of which the values need to be recoded.}
 
-\item{factor}{A logical to indicate whether recoded variables need to be converted into factors.}
+\item{factor}{A logical to indicate whether recoded variables need to be converted into ordered
+factors.}
 }
 \value{
 The input data frame with recoded and labelled variables.
@@ -24,11 +25,13 @@ Recode variables and their values based on a data dictionary
 \examples{
 \donttest{
 if (FALSE) {
-library(phdcocktail)
-data(ibd_data1, package = "phdcocktail")
-ibd_data_recoded <- recode_vrs(data = ibd_data1, data_dictionary = ibd_data_dict,
-vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
- }
+  library(phdcocktail)
+  data(ibd_data1, package = "phdcocktail")
+  ibd_data_recoded <- recode_vrs(
+    data = ibd_data1, data_dictionary = ibd_data_dict,
+    vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE
+  )
+}
 }
 
 }

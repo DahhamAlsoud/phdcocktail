@@ -3,25 +3,28 @@
 #' @param data A data frame with raw data.
 #' @param data_dictionary A data dictionary containing labels for variables and their values.
 #' @param vrs A character vector specifying variables of which the values need to be recoded.
-#' @param factor A logical to indicate whether recoded variables need to be converted into factors.
+#' @param factor A logical to indicate whether recoded variables need to be converted into ordered
+#' factors.
 #'
 #' @return The input data frame with recoded and labelled variables.
 #'
 #' @examples
 #' \donttest{
 #' if (FALSE) {
-#' library(phdcocktail)
-#' data(ibd_data1, package = "phdcocktail")
-#' ibd_data_recoded <- recode_vrs(data = ibd_data1, data_dictionary = ibd_data_dict,
-#'vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE)
-#'  }
-#'}
+#'   library(phdcocktail)
+#'   data(ibd_data1, package = "phdcocktail")
+#'   ibd_data_recoded <- recode_vrs(
+#'     data = ibd_data1, data_dictionary = ibd_data_dict,
+#'     vrs = c("disease_location", "disease_behaviour", "gender"), factor = TRUE
+#'   )
+#' }
+#' }
 #'
 #' @export
 recode_vrs <- function(data, data_dictionary, vrs = NULL, factor = FALSE) {
   # If no variables have been supplied, warn the user!
   if (is.null(vrs)) {
-    warning("It seems that you have left the 'vrs' argument empty. recode_vrs() will look for available 'variables labels'\n  To also get 'values labels', please pass the desired variables to 'vrs' argument")
+    warning("It seems that you have left the 'vrs' argument empty. recode_vrs() will therefore look for available 'variables labels'\n  If you whish to get 'values labels' too, please pass the desired variables to the 'vrs' argument")
   }
 
   # If none of the provided variables exist in both the analysis df and data dictionary, warn the user!
@@ -37,14 +40,14 @@ recode_vrs <- function(data, data_dictionary, vrs = NULL, factor = FALSE) {
     for (variable_name in vrs) {
       # Check if the variable exists in the analysis dataframe and data dictionary
       if (variable_name %in% names(data) &&
-          variable_name %in% data_dictionary$variable) {
+        variable_name %in% data_dictionary$variable) {
         # Get the mapping for the current variable from the data dictionary
         mapping <- data_dictionary[data_dictionary$variable == variable_name, ]
 
         # Recode the values in the analysis dataframe using the mapping
         recoded_values <- ifelse(data[[variable_name]] %in% mapping$value,
-                                 mapping$value_label[match(data[[variable_name]], mapping$value)],
-                                 data[[variable_name]]
+          mapping$value_label[match(data[[variable_name]], mapping$value)],
+          data[[variable_name]]
         )
 
         # Warn the user about any missing mappings values in the current variable

@@ -2,11 +2,10 @@
 % Please edit documentation in R/export_safely.R
 \name{export_safely}
 \alias{export_safely}
-\title{Export files to the 'output' folder}
+\title{Export files without overwriting}
 \usage{
 export_safely(
   data,
-  folder = "output/data",
   name = NULL,
   format = "xlsx",
   overwrite = FALSE,
@@ -16,9 +15,6 @@ export_safely(
 }
 \arguments{
 \item{data}{The object to be exported.}
-
-\item{folder}{The folder to which the object need to be exported.
-The default is a 'data' folder within the 'output' folder.}
 
 \item{name}{The name of the exported file. If no name is provided,
 the file will inherit the object's name.}
@@ -34,17 +30,17 @@ should be included in the file's name.}
 \item{...}{Other argument that can be passed to 'rio::export'}
 }
 \value{
-A message indicating the full path of the exported file.
+A message indicating the full path to the exported file.
 }
 \description{
-Export files to the 'output' folder
+Export files without overwriting
 }
 \examples{
 \donttest{
 if (FALSE) {
-library(phdcocktail)
-export_safely(mtcars)
-  }
+  library(phdcocktail)
+  export_safely(mtcars)
+}
 }
 
 }

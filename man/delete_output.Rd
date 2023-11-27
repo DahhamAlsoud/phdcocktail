@@ -2,7 +2,7 @@
 % Please edit documentation in R/delete_output.R
 \name{delete_output}
 \alias{delete_output}
-\title{Delete files from the 'output' folder}
+\title{Delete specific files from the 'output' folder}
 \usage{
 delete_output(folder = "output", which = NULL, extensions = c("xlsx", "xls"))
 }
@@ -10,9 +10,9 @@ delete_output(folder = "output", which = NULL, extensions = c("xlsx", "xls"))
 \item{folder}{A folder from which the user wishes to delete files.
 The default folder is 'output'.}
 
-\item{which}{An argument through which the user can specify which file to be deleted.
+\item{which}{An argument through which the user can specify which files to be deleted.
 There are 3 valid character values for this argument: i) 'except-r' option, which will delete
-all files except for R script and data files, ii) 'all' option, which will delete all files in
+all files except for R script and R data files, ii) 'all' option, which will delete all files in
 the specified folder, iii) 'extensions' option, which specify the extensions to be deleted.
 The default behaviour is 'except-r'.}
 
@@ -23,14 +23,14 @@ delete. The default extensions are excel extensions.}
 A message listing the files that have been deleted.
 }
 \description{
-Delete files from the 'output' folder
+Delete specific files from the 'output' folder
 }
 \examples{
 \donttest{
 if (FALSE) {
-library(phdcocktail)
-delete_output()
-  }
+  library(phdcocktail)
+  delete_output()
+}
 }
 
 }

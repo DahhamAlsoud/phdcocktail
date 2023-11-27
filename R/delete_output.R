@@ -1,10 +1,10 @@
-#' Delete files from the 'output' folder
+#' Delete specific files from the 'output' folder
 #'
 #' @param folder A folder from which the user wishes to delete files.
 #' The default folder is 'output'.
-#' @param which An argument through which the user can specify which file to be deleted.
+#' @param which An argument through which the user can specify which files to be deleted.
 #' There are 3 valid character values for this argument: i) 'except-r' option, which will delete
-#' all files except for R script and data files, ii) 'all' option, which will delete all files in
+#' all files except for R script and R data files, ii) 'all' option, which will delete all files in
 #' the specified folder, iii) 'extensions' option, which specify the extensions to be deleted.
 #' The default behaviour is 'except-r'.
 #' @param extensions A character vector indicating extensions of files that the user wishes to
@@ -15,9 +15,9 @@
 #' @examples
 #' \donttest{
 #' if (FALSE) {
-#' library(phdcocktail)
-#' delete_output()
-#'   }
+#'   library(phdcocktail)
+#'   delete_output()
+#' }
 #' }
 #'
 #' @export
@@ -50,9 +50,9 @@ delete_output <- function(folder = "output", which = NULL, extensions = c("xlsx"
     # Delete files and store their names
     deleted_files <- basename(files_list)
     file.remove(files_list)
-    cat("Deleted ", length(deleted_files), " file(s) from ", folder, ":\n", sep = "")
-    cat(deleted_files, sep = "\n")
-    cat("\n")
+    message("Deleted ", length(deleted_files), " file(s) from ", folder, ":", sep = "")
+    deleted_files_list <- paste(deleted_files, collapse = ", ")
+    message(deleted_files_list)
   } else {
     message(paste("No files found in", folder, "to delete!!\n", sep = " "))
   }
