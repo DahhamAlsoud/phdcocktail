@@ -45,7 +45,7 @@ reference:
   contents:
     - export_safely
     - save_work
-    - load_recent_work
+    - identify_recent_work
     - delete_output
     - start_fresh
 

@@ -1,19 +1,19 @@
-#' Load most recent saved R workspace
+#' Identify the most recent saved R workspace
 #'
-#' @param folder The folder from which the workspace need to be loaded.
+#' @param folder The folder in which the workspace need to be identified.
 #'
-#' @return A message indicating which workspace has been loaded.
+#' @return A message indicating the most recent saved workspace.
 #'
 #' @examples
 #' \donttest{
 #' library(phdcocktail)
 #' if (FALSE) {
-#'   load_recent_work()
+#'   identify_recent_work()
 #' }
 #' }
 #'
 #' @export
-load_recent_work <- function(folder = "output") {
+identify_recent_work <- function(folder = "output") {
   # Stop if the output folder does not exist
   folder <- here::here(folder)
   if (!dir.exists(folder)) {
@@ -49,8 +49,7 @@ load_recent_work <- function(folder = "output") {
     latest_file <- latest_file[which(numeric_indexes == highest_numeric_index)]
   }
 
-  # Load the workspace from the most recent .RData file(s)
-  load(latest_file, envir = .GlobalEnv)
-
-  message("Workspace loaded from:", latest_file)
+  # Return the most recent .RData file
+  message("The most recent saved workspace is: ", latest_file)
+  return(latest_file)
 }
