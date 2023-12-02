@@ -2,18 +2,18 @@
 #'
 #' @param folder The folder in which the workspace need to be identified.
 #'
-#' @return A message indicating the most recent saved workspace.
+#' @return The most recent saved workspace, as a "character string", and also indicated in a message.
 #'
 #' @examples
 #' \donttest{
 #' library(phdcocktail)
 #' if (FALSE) {
-#'   identify_recent_work()
+#'   identify_recent_workspace()
 #' }
 #' }
 #'
 #' @export
-identify_recent_work <- function(folder = "output") {
+identify_recent_workspace <- function(folder = "output") {
   # Stop if the output folder does not exist
   folder <- here::here(folder)
   if (!dir.exists(folder)) {

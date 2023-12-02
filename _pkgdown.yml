@@ -43,10 +43,9 @@ reference:
   desc: >
     Transfer data between R session and the `output` folder
   contents:
-    - export_safely
-    - save_work
-    - identify_recent_work
-    - delete_output
+    - get_safe_file_name
+    - get_safe_workspace_name
+    - identify_recent_workspace
     - start_fresh
 
 - title: Data

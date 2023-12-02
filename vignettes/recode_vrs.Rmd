@@ -121,5 +121,5 @@ ibd_data_recoded |>
 -   *Why not simply pass these variables/values labels manually to printing functions such as `gtsummary::tbl_summary()`?*\
     This would be tedious and a waste of time to repeat in each analysis (or maybe several times in one analysis!) assuming that one is working with the same topic/disease. In addition, passing labels manually is hugely prone to errors and inconsistencies across analyses and papers.\
 
--   *Are there other functions from other packages that can recode variables/values and attach label attributes?*\
+-   *Are there other functions from other packages that can recode variables/values and/or attach label attributes?*\
     Yes, such as `Hmisc::upData()`, `expss::apply_labels()`, `matchmaker::match_df()` and others....
