@@ -25,10 +25,10 @@
     <loc>https://dahhamalsoud.github.io/phdcocktail/news/index.html</loc>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/phdcocktail/reference/delete_output.html</loc>
+    <loc>https://dahhamalsoud.github.io/phdcocktail/reference/get_safe_file_name.html</loc>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/phdcocktail/reference/export_safely.html</loc>
+    <loc>https://dahhamalsoud.github.io/phdcocktail/reference/get_safe_workspace_name.html</loc>
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/phdcocktail/reference/ibd_data1.html</loc>
@@ -40,7 +40,7 @@
     <loc>https://dahhamalsoud.github.io/phdcocktail/reference/ibd_outcomes.html</loc>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/phdcocktail/reference/identify_recent_work.html</loc>
+    <loc>https://dahhamalsoud.github.io/phdcocktail/reference/identify_recent_workspace.html</loc>
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/phdcocktail/reference/index.html</loc>
@@ -56,9 +56,6 @@
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/phdcocktail/reference/report_quantiles.html</loc>
-  </url>
-  <url>
-    <loc>https://dahhamalsoud.github.io/phdcocktail/reference/save_work.html</loc>
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/phdcocktail/reference/start_fresh.html</loc>
