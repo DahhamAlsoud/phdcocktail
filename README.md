@@ -16,8 +16,14 @@ objects within the framework of R projects.
 
 ## Installation
 
-You can install the development version of `phdcocktail` from
-[GitHub](https://github.com/) with:
+You can install the most recent released version of `phdcocktail` with
+the following code:
+
+``` r
+install.packages("phdcocktail")
+```
+
+You can also install the development version of `phdcocktail` with:
 
 ``` r
 install.packages("devtools")
